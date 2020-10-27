@@ -46,7 +46,7 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ### or create a new account with one's own profile photo or a default profile photo
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/3.png"/>
 
-### Let's make LeBron James as an example. This is what his main page would look like.
+### Let's make LeBron James as an example. This is what his main page would look like. He's already uploaded a picture.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/4.png"/>
 
 ### Go to manage tab. LeBron can create a new album
@@ -77,9 +77,17 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ### Here he sees the lastest picture posted by Stephen Curry. Kyrie and Dwyane likes this picture, so he likes too.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/14.png"/>
 
-### LeBron also leaves a comment to congratualte on Stephen's new Championship
+### LeBron also leaves a comment to congratulate on Stephen's new Championship
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/15.png"/>
 
-### As he keeps scrolling down in the Explore
+### As he keeps scrolling down in Explore, he see everyones album with covers. 
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/16.png"/>
 
+### He clicks into D-Wade's album and sees all pictures in that album.
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/17.png"/>
+
+### As he keeps scrolling down in Explore to the "You May Also Like" section, LeBron sees this picture uploaded by D-Wade on the top and this makea because Lebron and D-Wade use a lot of common tags!
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/18.png"/>
+
+### In the end, LeBron sees he is the most contributed users and he is so happy about using this app.
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/19.png"/>
