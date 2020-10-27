@@ -1,14 +1,14 @@
 # Full-Stack-Photo-Sharing-Web-Design
 
-I developed this web-based photo sharing application similar to Flickr and Instagram. The back-end relational SQL database was created in MySQL. The front-end interface consisted of HTML, CSS and Flask framework in Python.
+I developed this web-based photo sharing application similar to Flickr and Instagram. The back-end relational SQL database was created in MySQL. The front-end interface was built in HTML, CSS and Flask framework in Python.
 
-Setup:
-
+##Setup:
 Install MySQL from http://dev.mysql.com/downloads/mysql/ 
 Install Python MySQL Driver from http://dev.mysql.com/downloads/connector/python/ 
-
+```shell
 python2 -m pip install Flask
 python2 -m pip install flask-mysql
+```
 
 To run MySQL on Mac Terminal:
 export PATH=${PATH}:/usr/local/mysql/bin
