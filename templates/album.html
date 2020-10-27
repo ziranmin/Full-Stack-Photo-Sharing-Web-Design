@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <title>PHOTO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+  <body>
+      <div class="w3-top">
+    <div class="w3-bar w3-black">
+      <div class="w3-dropdown-hover w3-black">
+          <button href="/" class="w3-button">EXPLORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/#1" class="w3-bar-item w3-button">Explore All Photos</a>
+            <a href="/#2" class="w3-bar-item w3-button">Explore All Albums</a>
+            <a href="/#3" class="w3-bar-item w3-button">You May Also Like</a>
+            <a href="/#4" class="w3-bar-item w3-button">Top 10 Users</a>
+            <a href="/#5" class="w3-bar-item w3-button">Top 10 Tags</a>
+          </div>
+        </div>
+      <a href="/account" class="w3-bar-item w3-button"></i> ACCOUNT</a>
+      <a href="/photo" class="w3-bar-item w3-button"></i> MANAGE <i class="fa fa-caret-down"></i></a>
+      <a href="/friend" class="w3-bar-item w3-button"></i> FRIENDS</a>
+      <div style="float: right;">
+        <form method="post" enctype="multipart/form-data" action='/album'>
+          <input type="text" name="searchTags" placeholder="Search by Tags">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  {% if photos %}
+  <div class="w3-row-padding w3-center" style="margin-top: 70px">
+    {% if title %}
+    <h1 class="w3-center">{{title}}</h1>
+    {% endif %}
+    <div class="album">
+      {% for photo in photos %}
+      <div class="w3-col m3">
+        <img src='data:image/png;base64, {{photo[0]}}' style="width:100%" class="w3-hover-opacity" alt={{photo[0]}} onclick="onClick(this)">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+
+
+
+
+  </body>
+</html>

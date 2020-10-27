@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <title>Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+    
+    <div class="w3-bar w3-black">
+      <div class="w3-dropdown-hover w3-black">
+          <button href="/" class="w3-button">EXPLORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/#1" class="w3-bar-item w3-button">Explore All Photos</a>
+            <a href="/#2" class="w3-bar-item w3-button">Explore All Albums</a>
+            <a href="/#3" class="w3-bar-item w3-button">You May Also Like</a>
+            <a href="/#4" class="w3-bar-item w3-button">Top 10 Users</a>
+            <a href="/#5" class="w3-bar-item w3-button">Top 10 Tags</a>
+          </div>
+        </div>
+      <a href="/account" class="w3-bar-item w3-button"></i> ACCOUNT</a>
+      <a href="/photo" class="w3-bar-item w3-button"></i> MANAGE <i class="fa fa-caret-down"></i></a>
+      <a href="/friend" class="w3-bar-item w3-button"></i> FRIENDS</a>
+      <div style="float: right;">
+        <form method="post" enctype="multipart/form-data" action='/album'>
+          <input type="text" name="searchTags" placeholder="Search by Tags">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    
+
+
+   <form action="/register/" method="POST" enctype="multipart/form-data"> 
+    <div class="centerVH w3-display-container w3-opacity-min">
+        <input class="w3-input w3-border" type="text" placeholder="First Name*" name="first">
+        <input class="w3-input w3-border" type="text" placeholder="Last Name*" name="last">
+        <input class="w3-input w3-border" type="email" placeholder="Email*" name="email">
+        <input class="w3-input w3-border" type="text" placeholder="Date of Birth (format:1996-11-08)*" required name="birth">
+        <input class="w3-input w3-border" type="text" placeholder="Hometown" name="hometown">  
+        <label>Gender:</label><br/>   
+        <input type="radio"  placeholder="Gender" name="gender" value = "Female">Female<br>
+        <input type="radio" placeholder="Gender" name="gender" value = "Male">Male<br>
+        <input type="radio" placeholder="Gender" name="gender" value = "Other">Other<br>
+        <input class="w3-input w3-border" type="password" placeholder="Password*" required name="password"><br>
+
+        <label>Do you want to Upload a Profile Picture?</label>
+        <br>
+        <input type="radio" name="prof" value = "no">No<br>
+        <input type="radio" name="prof" value = "yes">Yes<br>
+
+        <label for="photo">Upload a Profile Picture:</label>
+        <br>
+        <input type="file" name="profile" /><br/><br/>
+
+
+
+        <button class="w3-button w3-black" type="submit">Sign Up</button>
+     
+    </div>
+    </form>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

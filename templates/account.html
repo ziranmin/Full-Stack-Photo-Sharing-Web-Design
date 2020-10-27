@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <title>Photoshare_HOME</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.centered-and-cropped { object-fit: cover }
+
+.imgmyphoto{
+    max-width: 50%;
+    height: auto;
+}
+
+.likebutton {
+    background-color: white;
+    border: none;
+}
+
+.postBtn{
+  position: relative;
+  width: 200px;
+}
+.comment{
+  position: relative;
+  top: 20px;
+  left:13%;
+  margin-bottom: 50px
+}
+.oneComment{
+  position:relative;
+  width:280px;
+}
+
+</style>
+
+
+  <body>
+    
+    <div class="w3-top">
+    <div class="w3-bar w3-black">
+      <div class="w3-dropdown-hover w3-black">
+          <button href="/" class="w3-button">EXPLORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/#1" class="w3-bar-item w3-button">Explore All Photos</a>
+            <a href="/#2" class="w3-bar-item w3-button">Explore All Albums</a>
+            <a href="/#3" class="w3-bar-item w3-button">You May Also Like</a>
+            <a href="/#4" class="w3-bar-item w3-button">Top 10 Users</a>
+            <a href="/#5" class="w3-bar-item w3-button">Top 10 Tags</a>
+          </div>
+        </div>
+
+      <a href="/account" class="w3-bar-item w3-button"></i> ACCOUNT</a>
+      <a href="/photo" class="w3-bar-item w3-button"></i> MANAGE <i class="fa fa-caret-down"></i></a>
+      <a href="/friend" class="w3-bar-item w3-button"></i> FRIENDS</a>
+      <div style="float: right;">
+        <form method="post" enctype="multipart/form-data" action='/album'>
+          <input type="text" name="searchTags" placeholder="Search by Tags">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    </div>
+    
+
+
+    
+      <br>
+      <br>
+      <br>
+
+
+       <h1 class="w3-center">
+        {% if userInfo %}
+          {% if userInfo[9] %}
+           <img class="centered-and-cropped" src='data:image/png;base64, {{userInfo[9]}}' width="200" height="200" style="border-radius:50%"  alt={{userInfo[9]}} >
+      {% else %}
+           <img class="centered-and-cropped" src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg" width="200" height="200" style="border-radius:50%">
+      {% endif %}
+        {% endif %}
+      </h1>
+
+
+      <h3 class="w3-center">
+        {% if userInfo %}
+          {{userInfo[3]}} {{userInfo[4]}}
+        {% endif %}
+      </h3>
+
+
+
+
+      <h4 class="w3-center">
+        {% if userInfo %}
+          {{userInfo[6]}}
+          <br>
+        {% endif %}
+      </h4>
+
+      <h4 class="w3-center">
+        {% if userInfo %}
+          {{userInfo[5]}}
+          <br>
+          {{userInfo[1]}}
+          <br>
+          Contribution: {{userInfo[8]}}
+        {% endif %}
+      </h4>
+      <p class="w3-center"><a href='/logout'>LOGOUT</a></p>
+
+
+
+      <div class="w3-content w3-container w3-padding-64">
+        <h1 class="w3-center">My Tags:</h1>
+          <form method="post" enctype="multipart/form-data" action="/album">
+          <div class="w3-center">
+            {% if usertags %}
+            {% for tag in usertags %}
+
+            <button class = "w3-hover-opacity" name="clickedMyTag" value="{{tag[0]}}" type="submit">#{{tag[0]}} {{tag[1]}}</button> 
+
+            {% endfor %}
+             {% endif %}
+          </div>
+          </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+    {% if allphotos %}
+    {% if userInfo %}
+    {% for photo in allphotos %}
+    {% if userInfo[0]==photo[7] %}
+    <div>
+
+      <div class="w3-center">
+      <img src='data:image/png;base64, {{photo[0]}}' style="width:100%" class="imgmyphoto w3-hover-opacity" alt={{photo[2]}} onclick="onClick(this)">
+      </div>
+      
+      <div class="w3-center">
+      <h3>{{photo[2]}}</h3>
+
+   
+      <div class="w3-white">
+        <div class="w3-container w3-white tags">
+          <form method="post" enctype="multipart/form-data" action='/album'>
+            {% if tags %}
+            {% for tag in tags %}
+            {% if photo[1]==tag[1] %}
+
+            <button class = "w3-hover-opacity" name="clickedTag" value="{{tag[0]}}" type="submit">#{{tag[0]}}</button>
+
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </form>
+        </div>
+        </div>
+      </div>
+
+
+
+      <!-- comment and like -->
+      <div style="margin-bottom: 100px">
+        <!-- comment -->
+        <div class="dropdown w3-dropdown-hover" style="float:left">
+          <div class="w3-button w3-white"> <i class="fa fa-comment-o" style="font-size:36px"></i></div>
+          <div class="w3-dropdown-content w3-border" style="width:390px">
+            <div class="comment">
+              <div class="w3-row ">
+                <!-- existed comment -->
+                {% if allcomments %}
+                {% for comment in allcomments %}
+                {% if comment[3] == photo[1] %}
+                <div class="oneComment">
+                  <h5 class="w3-left"><b>{{comment[0]}}</b>: {{comment[1]}}</h5>
+                  <br>
+                  <h6 class="w3-right w3-opacity">{{comment[2]}}</h6>
+                  <br>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- like function -->
+        <div class="dropdown w3-dropdown-hover" style="float:right">
+          <div>
+            <form method="post" enctype="multipart/form-data" action='/'>
+              <button class = "likebutton" type="submit" name="likes" value={{photo[1]}}><i i class="fa fa-heart-o" style="font-size:36px"></i> {{photo[3]}} </button>
+            </form>
+          </div>
+          <div class="w3-dropdown-content w3-border" style="right:0;">
+            <ul class="w3-ul">
+              {% if alllikes %}
+              {% for like in alllikes %}
+              {% if like[0] == photo[1] %}
+              <li>
+                <span class="w3-large">{{like[1]}} {{like[2]}} </span><br>
+              </li>
+              {% endif %}
+              {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+  </div>
+    
+
+
+  </body>
+</html>
+

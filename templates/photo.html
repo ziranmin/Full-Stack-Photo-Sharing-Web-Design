@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <title>PHOTO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+img{
+    max-width: 40%;
+    height: auto;
+}
+.container0 {
+    position: relative;
+    width: 100%;
+}
+
+.container0 {
+    width: 100%;
+    height: auto;
+}
+
+.container0 .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container .btn:hover {
+    background-color: black;
+}
+
+
+
+
+ </style>
+
+
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+    <div class="w3-bar w3-black">
+
+
+
+      <div class="w3-dropdown-hover w3-black">
+          <button href="/" class="w3-button">EXPLORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/#1" class="w3-bar-item w3-button">Explore All Photos</a>
+            <a href="/#2" class="w3-bar-item w3-button">Explore All Albums</a>
+            <a href="/#3" class="w3-bar-item w3-button">You May Also Like</a>
+            <a href="/#4" class="w3-bar-item w3-button">Top 10 Users</a>
+            <a href="/#5" class="w3-bar-item w3-button">Top 10 Tags</a>
+          </div>
+        </div>
+
+
+
+      <a href="/account" class="w3-bar-item w3-button"></i> ACCOUNT</a>
+
+
+        <div class="w3-dropdown-hover w3-black">
+          <button href="/photo" class="w3-button">MANAGE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#al" class="w3-bar-item w3-button">Albums</a>
+            <a href="#ph" class="w3-bar-item w3-button">Photos</a>
+          </div>
+        </div>
+
+
+      <a href="/friend" class="w3-bar-item w3-button"></i> FRIENDS</a>
+      <div style="float: right;">
+        <form method="post" enctype="multipart/form-data" action='/album'>
+          <input type="text" name="searchTags" placeholder="Search by Tags">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    </div>
+
+
+
+    <br>
+    <br>
+    <!-- MY ALBUM -->
+    <div id = "al">
+    <br>
+    <br>
+    <br>
+    
+      <h1 class="w3-center">My Album</h1>
+
+      <!-- Creating an album -->
+      <div class="w3-dropdown-hover">   Create New Album
+        <div class="w3-dropdown-content w3-card-4" style="width:350px">
+          <div class="createAlbum">
+            <form method="post" enctype="multipart/form-data" action="/photo" >
+              <label for="photo">Album name:</label>
+              <input type="text" name="albumName" required='true' /><br/>
+              <input class="w3-button w3-black w3-section createBtn" type="submit" value="Create" /><br/><br/>
+            </form>
+          </div>  
+        </div>
+      </div>
+
+      <!-- Displaying album -->
+      <div class="w3-row-padding w3-center w3-section">
+        {% if albums %}
+            {% for album in albums %}
+              <div>
+
+               <div class="container0">
+                <img src='data:image/png;base64, {{album[2]}}' style="width:100%">
+                  <form method="post" enctype="multipart/form-data" action="/album">
+                  <button class="btn" type="submit" name="clickedAlbum" value={{album[0]}}>{{album[1]}}</button>
+                  </form>
+                </div>
+
+                <form method="post" enctype="multipart/form-data" action="/photo" >
+                  <div class="container">
+                    <button class="w3-button" type="submit" name="deleteAlbum" value={{album[1]}}>
+                      <i class="fa fa-trash fa-lg"></i>
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- MY PHOTO -->
+    <div id = "ph">
+    <br>
+    <br>
+    <br>
+
+
+    <div >
+      <h1 class="w3-center">My Photo</h1>
+
+      <!-- For uploading photos -->
+      <div class= "w3-dropdown-hover">   Upload New Photo
+        <div class="w3-dropdown-content w3-card-4" style="width:360px">
+          <div class="uploadPhoto">
+
+            <form method="post" enctype="multipart/form-data" action="/photo">
+              <label for="photo">Select Photo:</label>
+              <input type="file" name="photo" required='true' /><br/><br/>
+
+              <label for="caption">Please Caption:</label>
+              <input type="text" name="caption"  /><br/><br/>
+
+              <label for="album">Add Tags:</label>
+              <input type="text" name="tags" placeholder="   Seperate by '', '' " style="width:215px" /><br/><br/>
+
+              <label for="album">Choose Album:</label>
+              <select id="soflow" name="aname" required='true'>
+                {% if albums %}
+                    {% for album in albums %}
+                        <option>{{album[1]}}</option>
+                    {% endfor %}
+                {% endif %}
+              </select><br/><br/>
+
+              <input class="w3-button w3-black w3-section uploadBtn" type="submit" value="Upload" /><br/><br/><br/><br/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- For displaying photos -->
+      <div class="w3-row-padding w3-center ">
+        {% if photos %}
+            {% for photo in photos %}
+              <div>
+                <h5>{{photo[2]}}</h5>
+
+                <img src='data:image/png;base64, {{photo[0]}}' style="width:100%" class="w3-hover-opacity" alt={{photo[2]}} onclick="onClick(this)">
+
+                <!-- tags -->
+                <div class="w3-white">
+                  <div class="w3-container w3-white tags">
+                    <form method="post" enctype="multipart/form-data" action='/album'>
+                      {% if tags %}
+                      {% for tag in tags %}
+                      {% if photo[1]==tag[1] %}
+
+                      <button class="w3-tag w3-light-grey w3-medium w3-hover-opacity tag" name="clickedMyTag" value="{{tag[0]}}" type="submit">#{{tag[0]}}</button>
+
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+                    </form>
+                  </div>
+                </div>
+
+
+              
+
+                <div class= "w3-dropdown-hover" style="float:left"><i class="fa fa-minus fa-lg"></i>
+                  <div class="w3-dropdown-content  w3-card-4" style="width:360px">
+                    <br>
+
+                    <form method="post" action="/photo">
+                      <label>Enter Tags:</label>
+                      <input type="text" name="deletetags" placeholder="   Seperate by '', '' " style="width:215px" /><br/><br/>
+
+                      <button class="w3-button w3-black" type="submit" name="photoIDtoDeleteTags" value={{photo[1]}}>Delete</button>
+
+                    </form>
+                    <br>
+
+                 </div>
+                </div>
+
+
+             
+
+
+
+                <div class= "w3-dropdown-hover" style="float:right"><i class="fa fa-plus fa-lg"></i>
+                  <div class="w3-dropdown-content  w3-card-4" style="width:360px;right:0;">
+                    <br>
+
+                    <form method="post" action="/photo">
+                      <label>Enter Tags:</label>
+                      <input type="text" name="addtags" placeholder="   Seperate by '', '' " style="width:215px" /><br/><br/>
+
+                      <button class="w3-button w3-black" type="submit" name="photoIDtoAddTags" value={{photo[1]}}>Add</button>
+
+                    </form>
+                    <br>
+
+                 </div>
+                </div>
+
+              
+
+                <br>
+                <br>
+                <form method="post" enctype="multipart/form-data" action="/photo">
+                  <button class="w3-button" type="submit" name="delete" value={{photo[1]}}>
+                    <i class="fa fa-trash fa-lg"></i>
+                  </button>
+                </form>
+
+
+              </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+
+      </div>
+
+   
+
+
+
+
+
+
+
+  </body>
+</html>

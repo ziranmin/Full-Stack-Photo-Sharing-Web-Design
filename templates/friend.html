@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>HOME</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.centered-and-cropped { object-fit: cover }
+</style>
+
+
+<body>
+
+  <div class="w3-top">
+    <div class="w3-bar w3-black">
+      <div class="w3-dropdown-hover w3-black">
+          <button href="/" class="w3-button">EXPLORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/#1" class="w3-bar-item w3-button">Explore All Photos</a>
+            <a href="/#2" class="w3-bar-item w3-button">Explore All Albums</a>
+            <a href="/#3" class="w3-bar-item w3-button">You May Also Like</a>
+            <a href="/#4" class="w3-bar-item w3-button">Top 10 Users</a>
+            <a href="/#5" class="w3-bar-item w3-button">Top 10 Tags</a>
+          </div>
+        </div>
+      <a href="/account" class="w3-bar-item w3-button"></i> ACCOUNT</a>
+      <a href="/photo" class="w3-bar-item w3-button"></i> MANAGE <i class="fa fa-caret-down"></i></a>
+      <a href="/friend" class="w3-bar-item w3-button"></i> FRIENDS</a>
+      <div style="float: right;">
+        <form method="post" enctype="multipart/form-data" action='/album'>
+          <input type="text" name="searchTags" placeholder="Search by Tags">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+    <span class="w3-xlarge ">Unfollowed:</span><br>
+    <br>
+    <ul class="w3-ul w3-card">
+    {% if strangers %}
+      {% for stranger in strangers %}
+        <form method="post" enctype="multipart/form-data" action='/friend'>
+          <li class="w3-padding-16">
+            <button onclick="this.parentElement.style.display='none'" class="w3-button w3-white w3-large w3-right" name="addFriend" value="{{stranger[0]}}" type="submit">Add</i></button> 
+            <span class="w3-large">{{stranger[3]}} {{stranger[4]}} </span><br>
+            <span>{{stranger[6]}}</span>
+          </li>
+        </form>
+      {% endfor %}
+    {% endif %}
+    </ul>
+
+    <br>
+    <br>
+    <br>
+  
+    <span class="w3-xlarge ">Following:</span><br>
+    <br>
+    <ul class="w3-ul w3-card">
+    {% if friends %}
+      {% for friend in friends %}
+          <li class="w3-padding-16">
+            <span class="w3-large">{{friend[0]}} {{friend[1]}} </span><br>
+            <span>{{friend[3]}}</span>
+          </li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  
+
+
+</body>
+</html>
+
