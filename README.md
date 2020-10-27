@@ -37,7 +37,7 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 
 ## Demo
 
-### Go to login page
+### Go to Account page
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/1.png"/>
 ### You can either login with an exisitn account
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/2.png"/>
