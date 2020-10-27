@@ -49,7 +49,7 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ### Let's make LeBron James as an example. This is what his main page would look like. He's already uploaded a picture.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/4.png"/>
 
-### Go to manage tab. LeBron can create a new album
+### Go to Manage tab. LeBron can create a new album
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/5.png"/>
 
 ### Scroll down a little bit. He can upload a new photo with a caption, severals tags, and a designated album
