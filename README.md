@@ -74,19 +74,19 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ### Now, LeBron wants to see more pictures posted by other users, so he navigates to the Explore section
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/13.png"/>
 
-### Here he sees the lastest picture posted by Stephen Curry. Kyrie and Dwyane likes this picture, so he likes too.
+### Here he sees the lastest picture posted by Stephen Curry. Kyrie and Dwyane like this picture, so he likes too.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/14.png"/>
 
 ### LeBron also leaves a comment to congratulate on Stephen's new Championship
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/15.png"/>
 
-### As he keeps scrolling down in Explore, he see everyones album with covers. 
+### As he keeps scrolling down in Explore, he see everyone's album with covers. 
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/16.png"/>
 
 ### He clicks into D-Wade's album and sees all pictures in that album.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/17.png"/>
 
-### As he keeps scrolling down in Explore to the "You May Also Like" section, LeBron sees this picture uploaded by D-Wade on the top and this makea because Lebron and D-Wade use a lot of common tags!
+### As he keeps scrolling down in Explore and goes to the "You May Also Like" part, LeBron sees this picture uploaded by D-Wade on the top and this makes sense because Lebron and D-Wade use a lot of common tags!
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/18.png"/>
 
 ### In the end, LeBron sees he is the most contributed users and he is so happy about using this app.
