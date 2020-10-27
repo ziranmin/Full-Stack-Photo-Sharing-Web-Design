@@ -89,5 +89,5 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ### As he keeps scrolling down in Explore and goes to the "You May Also Like" part, LeBron sees this picture uploaded by D-Wade on the top and this makes sense because Lebron and D-Wade use a lot of common tags!
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/18.png"/>
 
-### In the end, LeBron sees he is the most contributed users and he is so happy about using this app.
+### In the end, LeBron sees he is the most contributed user and he is so happy about using this app.
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/19.png"/>
