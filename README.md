@@ -38,4 +38,4 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 ## Demo
 
 Go to login page
-<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/raw/master/demo_screenshots/1.png"/>
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/demo_screenshots/1.png"/>
