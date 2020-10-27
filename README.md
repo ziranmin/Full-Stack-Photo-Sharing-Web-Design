@@ -27,4 +27,8 @@ Open Max Terminal, enter:
 export FLASK_APP=app.py
 python2.7 -m flask run
 ```
-Then a web link will pop up. Just copy and paste it into a browser and you will open the photo-sharing website.
+Then a web link will pop up like the following: 
+```shell
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ ```
+Just copy and paste it into a browser and you will open the photo-sharing website.
