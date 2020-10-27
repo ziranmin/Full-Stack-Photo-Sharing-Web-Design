@@ -39,3 +39,12 @@ Just copy and paste it into a browser and you will open the photo-sharing websit
 
 Go to login page
 <img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/1.png"/>
+You can either login with an exisitn account
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/2.png"/>
+Or create a new account with you own profile photo or a default profile photo
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/3.png"/>
+Let's make LeBron James as an example. This is what his main page looks like.
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/4.png"/>
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/5.png"/>
+<img src="https://github.com/ziranmin/Full-Stack-Photo-Sharing-Web-Design/blob/main/demo_screenshots/5.png"/>
+
