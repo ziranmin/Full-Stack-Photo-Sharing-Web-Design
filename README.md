@@ -18,6 +18,7 @@ export PATH=${PATH}:/usr/local/mysql/bin
 mysql -u root -h 127.0.0.1 -p
 ```
 Enter your password.
+
 Create tables by `schema.sql`
 
 ## Run the Web App:
