@@ -3,6 +3,7 @@
 ## Tech Stack
 Python, Flask, MySQL, HTML, CSS
 
+## Summary
 I developed this web-based photo sharing application similar to Flickr and Instagram. The back-end relational SQL database was created in MySQL. The front-end interface was built in HTML, CSS and Flask framework in Python.
 
 ## Setup:
